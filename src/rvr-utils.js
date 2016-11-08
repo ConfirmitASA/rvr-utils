@@ -53,6 +53,7 @@ class RVRutils {
   /**
    * Creates an `<a-entity>` with parameters
    * @param {String} [name] - entity name if it's a primitive
+   * @param {Boolean} [batch=true] - whether all properties need to be applied at once (which replaces everything)
    * @param {Object} properties - an object with attribute names as keys
    * @returns {HTMLElement} Returns an `<a-entity>` element configured with attributes
    * */
@@ -64,7 +65,7 @@ class RVRutils {
       entity = document.createElement('a-entity');
     }
     if(typeof properties == 'object'){
-      RVRutils.setProperties({entity, properties});
+      RVRutils.setProperties({entity, batch:true, properties});
     }
     return entity
   }
@@ -77,13 +78,17 @@ class RVRutils {
    * @param {String} options.parentProp - the name of a parent property `properties` belong to
    * */
   static setProperties(options){
-    let {entity, properties, parentProp} = options;
+    let {entity, properties, parentProp, batch=false} = options;
     for(let key in properties){
       let prop;
-      if(!(typeof properties[key] == 'object' && !properties[key].x)){
-        typeof parentProp == 'string'?entity.setAttribute(parentProp, key , properties[key]): entity.setAttribute(key , properties[key]);
-      } else if(typeof properties[key] == 'object'){
-        RVRutils.setProperties(entity, properties[key], key);
+      if(batch) {
+        entity.setAttribute(key, props[key]);
+      } else {
+        if(!(typeof properties[key] == 'object' && !properties[key].x)){
+          typeof parentProp == 'string' ? entity.setAttribute(parentProp, key , properties[key]) : entity.setAttribute(key, properties[key]);
+        } else if(typeof properties[key] == 'object'){
+          RVRutils.setProperties({entity, properties:properties[key], parentProp:key});
+        }
       }
     }
   }
