@@ -92,6 +92,18 @@ class RVRutils {
       }
     }
   }
+
+  /**
+   * Utility function to transfer a CSS class from one element to another. If `to` isn't specified and `from` doesn't have the class name, it will be given one
+   * @param {String} className - name of the class to be moved
+   * @param {HTMLElement} from - element containing class
+   * @param {HTMLElement} to - element the class will be transferred to
+   * */
+  static classFollows(className,from,to){
+    if(from.classList.contains(className)){from.classList.remove(className)}
+    else if(!from.classList.contains(className) && !to){from.classList.add(className)}
+    if(to){to.classList.add(className)}
+  }
 }
 
 export default RVRutils

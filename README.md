@@ -1,7 +1,7 @@
 
 # rvr-utils
 
-Utils that help perfor common tasks in RVR. See docs for available methods @ http://confirmitasa.github.io/rvr-utils
+Utils that help perfor common tasks in RVR. See [API docs](http://confirmitasa.github.io/rvr-utils) for available methods
 
 ### Commands (configured in package.json)
 
