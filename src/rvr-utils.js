@@ -99,10 +99,9 @@ class RVRutils {
    * @param {HTMLElement} from - element containing class
    * @param {HTMLElement} to - element the class will be transferred to
    * */
-  static classFollows(className,from,to){
-    if(from.classList.contains(className)){from.classList.remove(className)}
-    else if(!from.classList.contains(className) && !to){from.classList.add(className)}
+  static classFollows(className,to,from){
     if(to){to.classList.add(className)}
+    if(from){from.classList.remove(className)}
   }
 }
 
