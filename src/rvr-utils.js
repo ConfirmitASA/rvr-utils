@@ -103,6 +103,37 @@ class RVRutils {
     if(to){to.classList.add(className)}
     if(from){from.classList.remove(className)}
   }
+
+  /**
+   * turns `window.location` object into an object with params as named keys necessary to reconstruct the URL
+   * @param {Object=} [location = window.location] - a window.location object, by default of the host window where the script is executed
+   * @returns {{path:String, query:Object}} a `location` object
+   * */
+  static locationDeserialize(location = window.location){
+    let o = {
+      path: location.origin + location.pathname,
+      query:{}
+    };
+    location.search.substring(1).split(/&/).forEach(pair=>{
+      let aPair= pair.split(/=/);
+      o.query[aPair[0].toLowerCase()] = aPair[1]
+    });
+    return o
+  }
+
+  /**
+   * Turns a `location` object (result of `locationDeserialize`) into a URL
+   * @param {{path:String, query:Object}} location - an object with params and a url
+   * @returns {String} - a URL string
+   * */
+  static locationSerialize(location){
+    let query=[];
+    for(let key in location.query){
+      query.push([key,location.query[key]].join('='));
+    }
+    return location.path + '?' + query.join('&');
+  }
+
 }
 
 export default RVRutils

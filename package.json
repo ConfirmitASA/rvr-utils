@@ -1,6 +1,6 @@
 {
   "name": "rvr-utils",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Utils for RVR",
   "main": "src/main.js",
   "repository": {
@@ -14,7 +14,7 @@
     "clean": "rimraf dist build",
     "lint": "eslint src",
     "docs": "node_modules/.bin/jsdoc --configure jsdoc.conf --verbose",
-    "docs-commit": "git subtree push --prefix docs/rvr-utils/0.1.2 origin gh-pages",
+    "docs-commit": "git subtree push --prefix docs/rvr-utils/0.1.3 origin gh-pages",
     "test": "karma start --single-run --no-auto-watch karma.config.js",
     "report-coverage": "codecov -f coverage/lcov.info"
   },
