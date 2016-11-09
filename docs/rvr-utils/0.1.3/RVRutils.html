@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RVRutils.html">RVRutils</a><ul class='methods'><li data-type='method'><a href="RVRutils.html#.classFollows">classFollows</a></li><li data-type='method'><a href="RVRutils.html#.createEntity">createEntity</a></li><li data-type='method'><a href="RVRutils.html#.getPalette">getPalette</a></li><li data-type='method'><a href="RVRutils.html#.mixin">mixin</a></li><li data-type='method'><a href="RVRutils.html#.setProperties">setProperties</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RVRutils.html">RVRutils</a><ul class='methods'><li data-type='method'><a href="RVRutils.html#.classFollows">classFollows</a></li><li data-type='method'><a href="RVRutils.html#.createEntity">createEntity</a></li><li data-type='method'><a href="RVRutils.html#.getPalette">getPalette</a></li><li data-type='method'><a href="RVRutils.html#.locationDeserialize">locationDeserialize</a></li><li data-type='method'><a href="RVRutils.html#.locationSerialize">locationSerialize</a></li><li data-type='method'><a href="RVRutils.html#.mixin">mixin</a></li><li data-type='method'><a href="RVRutils.html#.setProperties">setProperties</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -730,6 +730,338 @@
 
     
 
+    <h4 class="name" id=".locationDeserialize"><span class="type-signature">(static) </span>locationDeserialize<span class="signature">(location<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="rvr-utils.js.html">rvr-utils.js</a>, <a href="rvr-utils.js.html#line112">line 112</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>turns <code>window.location</code> object into an object with params as named keys necessary to reconstruct the URL</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>location</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>window.location</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>a window.location object, by default of the host window where the script is executed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <code>location</code> object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".locationSerialize"><span class="type-signature">(static) </span>locationSerialize<span class="signature">(location)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="rvr-utils.js.html">rvr-utils.js</a>, <a href="rvr-utils.js.html#line129">line 129</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Turns a <code>location</code> object (result of <code>locationDeserialize</code>) into a URL</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>location</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>an object with params and a url</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>a URL string</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
     <h4 class="name" id=".mixin"><span class="type-signature">(static) </span>mixin<span class="signature">(target, source)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
@@ -1228,7 +1560,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Tue Nov 08 2016 18:30:57 GMT+0300 (Russia TZ 2 Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Wed Nov 09 2016 11:09:14 GMT+0300 (Russia TZ 2 Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
